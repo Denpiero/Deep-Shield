@@ -8,6 +8,7 @@
 
 ## 📸 Ekran Görüntüsü
 ![WhatsApp Image 2026-04-08 at 12 49 43](https://github.com/user-attachments/assets/ae92e982-3053-41d6-abd3-9c5f9b13cfff)
+![WhatsApp Image 2026-04-08 at 13 33 27](https://github.com/user-attachments/assets/ba7a59ac-6615-4cca-b118-813c7eae3bf7)
 
 ---
 
@@ -122,7 +123,10 @@ python src/arayuz.py
 ---
 
 ## 👥 Ekip
-
+Umut Çağan Özcan
+Muhammed Numan Güllü
+Burak Arda Ünaldı
+Gökdeniz Tokgöz 
 > *(Ekip üyelerinin isimleri buraya)*
 
 ---
