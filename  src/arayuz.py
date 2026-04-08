@@ -1,4 +1,5 @@
 import sys
+PYTHON = sys.executable
 import threading
 import subprocess
 import os
@@ -73,7 +74,7 @@ class DeepShieldGUI(QMainWindow):
             
             # Subprocess ile terminal çıktılarını yakalıyoruz
             islem = subprocess.Popen(
-                ['python', dosya],
+                [PYTHON, dosya],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
