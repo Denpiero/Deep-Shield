@@ -7,8 +7,7 @@
 ---
 
 ## 📸 Ekran Görüntüsü
-
-> *(Proje arayüzünün ekran görüntüsü buraya eklenecek)*
+![WhatsApp Image 2026-04-08 at 12 49 43](https://github.com/user-attachments/assets/ae92e982-3053-41d6-abd3-9c5f9b13cfff)
 
 ---
 
