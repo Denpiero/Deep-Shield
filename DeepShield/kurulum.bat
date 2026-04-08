@@ -1,71 +1,50 @@
 @echo off
-chcp 65001 >nul
-title Deep-Shield Kurulum
+title Deep-Shield Setup
 
-echo.
-echo  ========================================
-echo   DEEP-SHIELD - Kurulum Basliyor
-echo  ========================================
-echo.
-
-:: YÖNETİCİ KONTROLÜ
 net session >nul 2>&1
 if %errorLevel% neq 0 (
-    echo  [!] Lutfen bu dosyaya sag tiklayin ve
-    echo  [!] "Yonetici olarak calistir" secin!
-    echo.
+    echo Run this file as Administrator!
+    echo Right click - Run as Administrator
     pause
     exit /b 1
 )
 
-:: PYTHON KONTROLÜ
-echo  [1/3] Python kontrol ediliyor...
+echo Checking Python...
 python --version >nul 2>&1
 if %errorLevel% neq 0 (
-    echo  [HATA] Python bulunamadi!
-    echo  https://python.org adresinden Python 3.10+ yukleyin.
+    echo Python not found! Download from python.org
     start https://python.org/downloads
     pause
     exit /b 1
 )
-for /f "tokens=*" %%i in ('python --version') do echo  [OK] %%i
-echo.
+python --version
 
-:: KÜTÜPHANELERİ YÜKLE
-echo  [2/3] Kutuphaneler yukleniyor...
-echo  (1-3 dakika surebilir, lutfen bekleyin)
 echo.
+echo Installing libraries...
 python -m pip install --upgrade pip --quiet
-python -m pip install -r requirements.txt --quiet
+python -m pip install scapy scikit-learn seaborn matplotlib pandas joblib PyQt6 numpy --quiet
+
 if %errorLevel% neq 0 (
-    echo  [HATA] Kutuphaneler yuklenemedi!
-    echo  Internet baglantinizi kontrol edin.
+    echo Install failed! Check internet connection.
     pause
     exit /b 1
 )
-echo  [OK] Kutuphaneler yuklendi!
-echo.
 
-:: NPCAP KONTROLÜ
-echo  [3/3] Npcap kontrol ediliyor...
+echo.
+echo Checking Npcap...
 if exist "C:\Windows\System32\Npcap\wpcap.dll" (
-    echo  [OK] Npcap zaten yuklu.
-) else if exist "C:\Windows\System32\wpcap.dll" (
-    echo  [OK] WinPcap bulundu.
+    echo Npcap OK.
 ) else (
-    echo  [!] Npcap yuklu degil - ag dinlemesi icin zorunludur!
-    echo  [!] Tarayicinizda Npcap indirme sayfasi aciliyor...
+    echo Npcap not found! Opening download page...
+    echo Check "WinPcap API-compatible Mode" during install!
     start https://npcap.com/#download
-    echo.
-    echo  Npcap'i kurun, sonra deepshield.bat ile programi baslatin.
+    echo After installing Npcap, run deepshield.bat
     pause
     exit /b 0
 )
 
 echo.
-echo  ========================================
-echo   KURULUM TAMAMLANDI!
-echo   Simdi deepshield.bat calistirin.
-echo  ========================================
-echo.
+echo ================================
+echo  Setup complete! Run deepshield.bat
+echo ================================
 pause

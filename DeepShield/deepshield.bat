@@ -1,33 +1,25 @@
 @echo off
-chcp 65001 >nul
 title Deep-Shield
 
-:: YÖNETİCİ KONTROLÜ (scapy için zorunlu)
 net session >nul 2>&1
 if %errorLevel% neq 0 (
-    echo  [!] Deep-Shield ag dinlemesi icin yonetici yetkisi gerektirir.
-    echo  [!] Lutfen bu dosyaya sag tiklayin ve
-    echo  [!] "Yonetici olarak calistir" secin!
-    echo.
+    echo Run this file as Administrator!
+    echo Right click - Run as Administrator
     pause
     exit /b 1
 )
 
-:: KURULUM YAPILDI MI KONTROL ET
 python -c "import scapy, sklearn, PyQt6" >nul 2>&1
 if %errorLevel% neq 0 (
-    echo  [!] Kutuphaneler eksik! Once kurulum.bat calistirin.
+    echo Libraries missing! Run kurulum.bat first.
     pause
     exit /b 1
 )
 
-:: PROGRAMI BAŞLAT
-echo  [*] Deep-Shield baslatiliyor...
+echo Starting Deep-Shield...
 python src\arayuz.py
 
 if %errorLevel% neq 0 (
-    echo.
-    echo  [HATA] Program baslatılamadı.
-    echo  Once kurulum.bat calistirdiginizdan emin olun.
+    echo Program failed to start. Run kurulum.bat first.
     pause
 )
