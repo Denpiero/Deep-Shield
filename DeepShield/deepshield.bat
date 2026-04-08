@@ -17,7 +17,7 @@ if %errorLevel% neq 0 (
 )
 
 echo Starting Deep-Shield...
-python src\arayuz.py
+python ..src\arayuz.py
 
 if %errorLevel% neq 0 (
     echo Program failed to start. Run kurulum.bat first.
