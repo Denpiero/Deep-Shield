@@ -1,0 +1,20 @@
+# Python sanal ortamı (Kesinlikle gitmemeli)
+hack_env/
+venv/
+env/
+
+# Python önbellek dosyaları
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Veri dosyaları (Çok büyükse veya özelse)
+ozellikler.csv
+*.pcap
+
+# İşletim sistemi dosyaları
+.DS_Store
+Thumbs.db
+
+# VS Code ayarları
+.vscode/ozellikler.csv
