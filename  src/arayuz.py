@@ -58,11 +58,11 @@ class DeepShieldGUI(QMainWindow):
     def run_deep_shield(self):
         # Sırasıyla çalıştırılacak dosyalar (Senin gönderdiğin liste)
         dosyalar = [
-            ('aşama1_veri_topla.py', 60),
-            ('aşama2_ozellik_cikar.py', None),
-            ('aşama3_model.py', None),
-            ('aşama4_gorsellestir.py', None),
-            ('aşama5_gercek_zamanli.py', None)
+            ( 'asama1_veri_topla.py', 60),
+            ('asama2_ozellik_cikar.py', None),
+            ('asama3_model.py', None),
+            ('asama4_gorsellestir.py', None),
+            ('asama5_gercek_zamanli.py', None)
         ]
 
         for dosya, sure in dosyalar:
